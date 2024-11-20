@@ -192,7 +192,7 @@ namespace EProductEB.Models
         public Response addUpdateProduct(Products products, SqlConnection connection)
         {
             Response response=new Response();
-            SqlCommand cmd = new SqlCommand("sp_AddUpdateMedicine", connection);
+            SqlCommand cmd = new SqlCommand("sp_AddUpdateProduct", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Name", products.Name);
             cmd.Parameters.AddWithValue("@Manufacturer", products.Manufacturer); 
