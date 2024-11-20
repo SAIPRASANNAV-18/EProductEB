@@ -10,7 +10,7 @@ namespace EProductEB.Models
         {
             Response response new Response();
             SqlCommand cmd = new SqlCommand("sp_register", connection);
-            cmd.CommandType CommandType.Stored Procedure;
+            cmd.CommandType = CommandType.Stored Procedure;
             cmd.Parameters.AddWithValue("@FirstName", users.FirstName);
             cmd.Parameters.AddWithValue("@LastName", users.LastName);
             cmd.Parameters.AddWithValue("@Password", users.Password);
@@ -48,7 +48,7 @@ namespace EProductEB.Models
             if (dt.Rows.Count > 0)
             {
                 user.ID = Convert.ToInt32(dt.Rows[0]["ID"]);
-                user.FirstName Convert.ToString(dt.Rows[0]["FirstName"]);
+                user.FirstName = Convert.ToString(dt.Rows[0]["FirstName"]);
                 user.LastName = Convert.ToString(dt.Rows[0]["LastName"]);
                 user.Email = Convert.ToString(dt.Rows[0]["Email"]);
                 user.Type = Convert.ToString(dt.Rows[0]["Type"]);
